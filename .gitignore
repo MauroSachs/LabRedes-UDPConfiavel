@@ -1,0 +1,35 @@
+# Maven output
+/target/
+
+# IntelliJ IDEA files
+.idea/
+/*.iml
+*.iws
+*.ipr
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Compiled bytecode
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Local configuration files
+*.env
+*.properties.local
+.env*
+
+# Maven specific
+.mvn/wrapper/maven-wrapper.jar
+!/.mvn/wrapper/maven-wrapper.properties
+
+# VS Code settings (if used)
+.vscode/

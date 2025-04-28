@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  device1:
+    build: .
+    stdin_open: true
+    tty: true
+    cap_add:
+      - NET_ADMIN    
+    environment:
+      - SERVER_PORT=9876
+      - CLIENT_ID=device1
+    volumes:
+      - ./arquivos:/app/files
+    networks:
+      mynet:
+        ipv4_address: 172.20.0.10
+
+  device2:
+    build: .
+    stdin_open: true
+    tty: true
+    cap_add:
+      - NET_ADMIN        
+    environment:
+      - SERVER_PORT=9876
+      - CLIENT_ID=device2
+    volumes:
+      - ./arquivos:/app/files
+    networks:
+      mynet:
+        ipv4_address: 172.20.0.11
+
+  device3:
+    build: .
+    stdin_open: true
+    tty: true
+    cap_add:
+      - NET_ADMIN        
+    environment:
+      - SERVER_PORT=9876
+      - CLIENT_ID=device3
+    volumes:
+      - ./arquivos:/app/files
+    networks:
+      mynet:
+        ipv4_address: 172.20.0.12
+
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
